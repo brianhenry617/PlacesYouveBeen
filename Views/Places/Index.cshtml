@@ -1,10 +1,14 @@
 <h1>Places Youve Been</h1>
-<ul>
+<table>
   @foreach(var place in Model)
   {
-    <li>@place.GetLocation()</li>
+  <tr>
+    <td>@place.GetLocation()</td>
+    <td>@place.GetStay()</td>
+    <td>@place.GetPicture()</td>
+  </tr>
   }
-</ul>
+</table>
 <p><a href="/places/new">Add another place</a></p>
 <form action="/places/delete" method="post">
   <button type="submit" name="button">Clear All Items</button>
